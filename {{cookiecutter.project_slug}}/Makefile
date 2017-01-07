@@ -26,15 +26,15 @@ BROWSER := python -c "$$BROWSER_PYSCRIPT"
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
-clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
+clean: clean-build clean-pyc clean-test clean-docs ## remove all build, test, coverage and Python artifacts
 
 
 clean-build: ## remove build artifacts
 	rm -fr build/
 	rm -fr dist/
 	rm -fr .eggs/
-	find . -name '*.egg-info' -exec rm -fr {} +
-	find . -name '*.egg' -exec rm -f {} +
+	find . \( -path env -o -path venv -o -path .env -path .venv \) -prune -o -name '*.egg-info' -exec rm -fr {} +
+	find . \( -path env -o -path venv -o -path .env -path .venv \) -prune -o -name '*.egg' -exec rm -f {} +
 
 clean-pyc: ## remove Python file artifacts
 	find . -name '*.pyc' -exec rm -f {} +
@@ -46,6 +46,11 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
+
+clean-docs:
+	rm -f docs/{{ cookiecutter.project_slug }}.rst
+	rm -f docs/modules.rst
+	$(MAKE) -C docs clean
 
 lint: ## check style with flake8
 	flake8 {{ cookiecutter.project_slug }} tests
@@ -62,17 +67,15 @@ test-all: ## run tests on every Python version with tox
 
 coverage: ## check code coverage quickly with the default Python
 	{% if cookiecutter.use_pytest == 'y' -%}
-		coverage run --source {{ cookiecutter.project_slug }} -m pytest
+		coverage run -m pytest
 	{% else %}
-		coverage run --source {{ cookiecutter.project_slug }} setup.py test
+		coverage run setup.py test
 	{% endif %}
-		coverage report -m
-		coverage html
-		$(BROWSER) htmlcov/index.html
+	coverage report -m
+	coverage html
+	$(BROWSER) htmlcov/index.html
 
-docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/{{ cookiecutter.project_slug }}.rst
-	rm -f docs/modules.rst
+docs: clean-docs ## generate Sphinx HTML documentation, including API docs
 	sphinx-apidoc -o docs/ {{ cookiecutter.project_slug }}
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
