@@ -35,6 +35,8 @@ clean-build: ## remove build artifacts
 	rm -fr .eggs/
 	find . \( -path env -o -path venv -o -path .env -path .venv \) -prune -o -name '*.egg-info' -exec rm -fr {} +
 	find . \( -path env -o -path venv -o -path .env -path .venv \) -prune -o -name '*.egg' -exec rm -f {} +
+	find . \( -path ./env -o -path ./venv -o -path ./.env -o -path ./.venv \) -prune -o -name '*.egg-info' -exec rm -fr {} +
+	find . \( -path ./env -o -path ./venv -o -path ./.env -o -path ./.venv \) -prune -o -name '*.egg' -exec rm -f {} +
 
 clean-pyc: ## remove Python file artifacts
 	find . -name '*.pyc' -exec rm -f {} +
@@ -86,7 +88,7 @@ servedocs: docs ## compile the docs watching for changes
 
 {%- if 'no' not in cookiecutter.command_line_interface|lower %}
 executable:
-	pyinstaller {{ cookiercutter.project_slug }}/cli.py
+	pyinstaller --name {{ cookiercutter.project_slug }} {{ cookiercutter.project_slug }}/cli.py
 {% -endif %}
 
 release: clean ## package and upload a release
