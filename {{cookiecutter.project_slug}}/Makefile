@@ -33,8 +33,6 @@ clean-build: ## remove build artifacts
 	rm -fr build/
 	rm -fr dist/
 	rm -fr .eggs/
-	find . \( -path env -o -path venv -o -path .env -path .venv \) -prune -o -name '*.egg-info' -exec rm -fr {} +
-	find . \( -path env -o -path venv -o -path .env -path .venv \) -prune -o -name '*.egg' -exec rm -f {} +
 	find . \( -path ./env -o -path ./venv -o -path ./.env -o -path ./.venv \) -prune -o -name '*.egg-info' -exec rm -fr {} +
 	find . \( -path ./env -o -path ./venv -o -path ./.env -o -path ./.venv \) -prune -o -name '*.egg' -exec rm -f {} +
 
