@@ -86,8 +86,8 @@ servedocs: docs ## compile the docs watching for changes
 
 {%- if 'no' not in cookiecutter.command_line_interface|lower %}
 executable:
-	pyinstaller --name {{ cookiercutter.project_slug }} {{ cookiercutter.project_slug }}/cli.py
-{% -endif %}
+	pyinstaller --name {{ cookiecutter.project_slug }} {{ cookiecutter.project_slug }}/cli.py
+{%- endif %}
 
 release: clean ## package and upload a release
 	python setup.py sdist upload
