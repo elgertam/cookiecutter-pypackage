@@ -56,9 +56,9 @@ lint: ## check style with flake8
 	flake8 {{ cookiecutter.project_slug }} tests
 
 test: ## run tests quickly with the default Python
-	{% if cookiecutter.use_pytest == 'y' -%}
+	{%- if cookiecutter.use_pytest == 'y' %}
 		py.test
-	{% else %}
+	{%- else %}
 		python setup.py test
 	{%- endif %}
 
@@ -66,11 +66,11 @@ test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	{% if cookiecutter.use_pytest == 'y' -%}
+	{%- if cookiecutter.use_pytest == 'y' %}
 		coverage run -m pytest
-	{% else %}
+	{%- else %}
 		coverage run setup.py test
-	{% endif %}
+	{%- endif %}
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
