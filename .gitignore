@@ -31,8 +31,10 @@ Temporary Items
 *.so
 
 # Distribution / packaging
+.python-version
 .Python
 env/
+.venv/
 build/
 develop-eggs/
 dist/

@@ -3,22 +3,18 @@
 
 from setuptools import setup
 
+from _lib.pipenv.project import Project
+from _lib.pipenv.utils import convert_deps_to_pip
+
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [
-    {%- if cookiecutter.command_line_interface|lower == 'click' %}
-    'Click>=6.0',
-    {%- endif %}
-    # TODO: put package requirements here
-]
-
-test_requirements = [
-    # TODO: put package test requirements here
-]
+pfile = Project().parsed_pipfile
+requirements = convert_deps_to_pip(pfile['packages'], r=False)
+test_requirements = convert_deps_to_pip(pfile['dev-packages'], r=False)
 
 {%- set license_classifiers = {
     'MIT license': 'License :: OSI Approved :: MIT License',
@@ -63,12 +59,11 @@ setup(
 {%- endif %}
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
     test_suite='tests',
     tests_require=test_requirements
