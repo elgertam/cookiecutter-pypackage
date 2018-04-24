@@ -13,7 +13,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/audreyr/cookiecutter-pypackage/issues
+Report bugs at https://github.com/elgertam/cookiecutter-pipenv/issues
 
 If you are reporting a bug, please include:
 
@@ -42,7 +42,7 @@ official docs, in docstrings, or even on the web in blog posts, articles, and su
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/audreyr/cookiecutter-pypackage/issues.
+The best way to send feedback is to file an issue at https://github.com/elgertam/cookiecutter-pipenv/issues.
 
 If you are proposing a new feature:
 
@@ -54,26 +54,22 @@ If you are proposing a new feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `cookiecutter-pypackage` for local development. Please note this documentation assumes
-you already have `virtualenv` and `Git` installed and ready to go.
+Ready to contribute? Here's how to set up `cookiecutter-pipenv` for local development. Please note this documentation assumes
+you already have `Pipenv` and `Git` installed and ready to go.
 
-1. Fork the `cookiecutter-pypackage` repo on GitHub.
+1. Fork the `cookiecutter-pipenv` repo on GitHub.
 2. Clone your fork locally::
 
   .. code-block:: bash
 
     $ cd path_for_the_repo
-    $ git clone git@github.com:YOUR_NAME/cookiecutter-pypackage.git
+    $ git clone git@github.com:YOUR_NAME/cookiecutter-pipenv.git
 
 3. Assuming you have virtualenv installed (If you have Python3.5 this should already be there), you can create a new environment for your local development by typing::
 
   .. code-block:: bash
 
-    $ virtualenv cookiecutter-pypackage-env
-    $ source cookiecutter-pypackage-env/bin/activate
-
-    This should change the shell to look something like
-    (cookiecutter-pypackage-env) $
+    $ Pipenv install
 
 4. Create a branch for local development::
 
@@ -94,7 +90,7 @@ you already have `virtualenv` and `Git` installed and ready to go.
 
   .. code-block:: bash
 
-    $ pip install -rrequirements_dev.txt
+    $ pipenv install --dev
     $ py.test ./tests
 
    If you get any errors while installing cryptography package (something like #include <openssl/aes.h>).
@@ -136,7 +132,7 @@ Before you submit a pull request, check that it meets these guidelines:
    feature to the list in README.rst.
 
 3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy. Check
-   https://travis-ci.org/audreyr/cookiecutter-pypackage/pull_requests
+   https://travis-ci.org/elgertam/cookiecutter-pipenv/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Add a New Test
@@ -167,6 +163,6 @@ To write and run your new test, follow these steps:
 
 6. Rerun your test and confirm that your test passes. If it passes, congratulations!
 
-.. cookiecutter: https://github.com/audreyr/cookiecutter-pypackage
+.. cookiecutter: https://github.com/elgertam/cookiecutter-pipenv
 .. virtualenv: https://virtualenv.pypa.io/en/stable/installation
 .. git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git

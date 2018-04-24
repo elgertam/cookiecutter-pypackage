@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# cookiecutter-pypackage documentation build configuration file, created by
+# cookiecutter-pipenv documentation build configuration file, created by
 # sphinx-quickstart on Sun Dec 13 09:13:01 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -53,9 +53,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'cookiecutter-pypackage'
-copyright = '2015, Audrey Roy Greenfeld'
-author = 'Audrey Roy Greenfeld'
+project = 'cookiecutter-pipenv'
+copyright = '2018, Andrew Mark Elgert'
+author = 'Andrew Mark Elgert'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -229,8 +229,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'cookiecutter-pypackage.tex', 'cookiecutter-pypackage Documentation',
-   'Audrey Roy Greenfeld', 'manual'),
+  (master_doc, 'cookiecutter-pipenv.tex', 'cookiecutter-pipenv Documentation',
+   'Andrew Mark Elgert', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

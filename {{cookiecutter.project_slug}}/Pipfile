@@ -4,24 +4,23 @@ verify_ssl = true
 
 [dev-packages]
 bumpversion = "==0.5.3"
-wheel = "==0.29.0"
+wheel = "==0.30.0"
 watchdog = "==0.8.3"
-flake8 = "==2.6.0"
-tox = "==2.3.1"
-coverage = "==4.3.1"
+flake8 = "==3.5.0"
+tox = "==2.9.1"
+coverage = "==4.5.1"
 {%- if cookiecutter.use_pytest == 'y' %}
-pytest = "==3.0.7"
+pytest = "==3.4.2"
+pytest-runner = "==2.11.1"
 {%- endif %}
 {%- if 'no' not in cookiecutter.command_line_interface|lower %}
-PyInstaller = "==3.2.1"
+PyInstaller = "==3.3.1"
 {%- endif %}
-Sphinx = "==1.4.8"
-{%- if cookiecutter.use_pypi_deployment_with_travis == 'y' %}
-cryptography = "==1.8.1"
-PyYAML = "==3.11"
-{%- endif %}
+Sphinx = "==1.7.1"
+twine==1.10.0
 
 {%- if cookiecutter.command_line_interface|lower == 'click' %}
 [packages]
-click = ">=6.0"
+"e1839a8" = {path = ".", editable = true}
+click = "==6.7"
 {%- endif %}

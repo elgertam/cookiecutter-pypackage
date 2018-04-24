@@ -2,14 +2,14 @@
 
 from distutils.core import setup
 setup(
-    name='cookiecutter-pypackage',
+    name='cookiecutter-pipenv',
     packages=[],
     version='0.1.0',
-    description='Cookiecutter template for a Python package',
-    author='Audrey Roy Greenfeld',
+    description='Cookiecutter template for a Python package using Pipenv',
+    author='Andrew Mark Elgert',
     license='BSD',
-    author_email='aroy@alum.mit.edu',
-    url='https://github.com/audreyr/cookiecutter-pypackage',
+    author_email='andrew.elgert@gmail.com',
+    url='https://github.com/elgertam/cookiecutter-pipenv',
     keywords=['cookiecutter', 'template', 'package', ],
     classifiers=[
         'Development Status :: 4 - Beta',

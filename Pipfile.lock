@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9b92b3bdc47549b33a2e88bd70865c4f371144d3589aa69f95589588a349be9f"
+            "sha256": "621cdc8e87c66beeb73cc77d94503d3df15a64dc54380d84d8cbf3a0ca194ab6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,12 @@
         ]
     },
     "default": {
+        "e1839a8": {
+            "editable": true,
+            "path": "."
+        }
+    },
+    "develop": {
         "alabaster": {
             "hashes": [
                 "sha256:a1cb1b94fcc192ff74ca212d6ef5cb543bb169cfe7991c2b9df256bb354c1fff",
@@ -132,10 +138,6 @@
             ],
             "index": "pypi",
             "version": "==1.7"
-        },
-        "e1839a8": {
-            "editable": true,
-            "path": "."
         },
         "enum34": {
             "hashes": [
@@ -329,6 +331,5 @@
             ],
             "version": "==0.4.1"
         }
-    },
-    "develop": {}
+    }
 }
