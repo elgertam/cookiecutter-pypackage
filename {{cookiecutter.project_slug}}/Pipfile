@@ -17,10 +17,9 @@ pytest-runner = "==2.11.1"
 PyInstaller = "==3.3.1"
 {%- endif %}
 Sphinx = "==1.7.1"
-twine==1.10.0
+twine = "==1.10.0"
 
-{%- if cookiecutter.command_line_interface|lower == 'click' %}
 [packages]
-"e1839a8" = {path = ".", editable = true}
+{%- if cookiecutter.command_line_interface|lower == 'click' %}
 click = "==6.7"
 {%- endif %}
