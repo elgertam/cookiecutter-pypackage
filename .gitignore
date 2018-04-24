@@ -31,10 +31,11 @@ Temporary Items
 *.so
 
 # Distribution / packaging
-.python-version
 .Python
 env/
+.env/
 .venv/
+venv/
 build/
 develop-eggs/
 dist/
@@ -70,6 +71,7 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
+.pytest_cache/
 
 # Translations
 *.mo

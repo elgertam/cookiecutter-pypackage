@@ -1,6 +1,6 @@
 {
   "full_name": "Audrey Roy Greenfeld",
-  "email": "aroy@alum.mit.edu",
+  "email": "ame@example.com",
   "github_username": "audreyr",
   "project_name": "Python Boilerplate",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
@@ -9,10 +9,8 @@
   "version": "0.1.0",
   "use_pytest": "n",
   "use_pypi_deployment_with_travis": "y",
+  "add_pyup_badge": "n",
   "command_line_interface": ["Click", "No command-line interface"],
   "create_author_file": "y",
-  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
-  "_copy_without_render": [
-    "_lib"
-  ]
+  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
 }
